@@ -8,7 +8,7 @@ import datetime as dt
 def download_data(stock, start, end):
     data= {}
     ticker = yf.download(stock, start, end)
-    data['price'] = ticker.price
+    data['price'] = ticker['Adj Close']
     return pd.DataFrame(data)
 
 if __name__ == '__main__':
