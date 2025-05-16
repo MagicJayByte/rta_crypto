@@ -121,6 +121,8 @@ if __name__ == '__main__':
                     cerebro.adddata(bt.feeds.PandasData(dataname=df, plot=False))
             except FileNotFoundError:
                 pass
+
+    
     cerebro.addobserver(bt.observers.Value)
     cerebro.addanalyzer(bt.analyzers.SharpeRatio, riskfreerate=0.0)
     cerebro.addanalyzer(bt.analyzers.Returns)
